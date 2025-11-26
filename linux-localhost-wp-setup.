@@ -1,0 +1,64 @@
+📘 WORDPRESS LOCAL INSTALLATION (KALI LINUX + XAMPP)
+-----------------------------------------------------
+
+✅ STEP 1 — Start XAMPP Services
+Start Apache + MySQL:
+sudo /opt/lampp/lampp start
+
+If MySQL already running → OK.
+
+-----------------------------------------------------
+
+✅ STEP 2 — Create WordPress Database
+1. Open browser:
+   http://localhost/phpmyadmin
+
+2. Click “New”
+
+3. Enter database name:
+   wordpress
+
+4. Click “Create”
+
+-----------------------------------------------------
+
+✅ STEP 3 — Download & Move WordPress
+1. Download WordPress:
+cd /tmp
+wget https://wordpress.org/latest.tar.gz
+
+2. Extract:
+tar -xvf latest.tar.gz
+
+3. Move to XAMPP htdocs:
+sudo mv wordpress /opt/lampp/htdocs/
+
+4. (Optional) Rename folder:
+sudo mv /opt/lampp/htdocs/wordpress /opt/lampp/htdocs/codexpro
+
+-----------------------------------------------------
+
+✅ STEP 4 — Configure wp-config.php
+1. Go to folder:
+cd /opt/lampp/htdocs/codexpro
+
+2. Copy sample config:
+sudo cp wp-config-sample.php wp-config.php
+
+3. Edit file:
+sudo nano wp-config.php
+
+4. Set these values:
+
+define( 'DB_NAME', 'wordpress' );
+define( 'DB_USER', 'root' );
+define( 'DB_PASSWORD', '' );
+define( 'DB_HOST', 'localhost' );
+
+5. Save:
+CTRL + O → Enter
+CTRL + X
+
+-----------------------------------------------------
+✔ You're now ready for WordPress installation:
+Open: http://localhost/codexpro
