@@ -2,7 +2,7 @@
 
 **Goal:** Replace Kali Linux's default boot splash (dragon) with your own image (`mylogo.png`) using a custom Plymouth theme. This single page explains **why**, **what files are created**, an **automated install script**, and **manual step‑by‑step commands** with comments so beginners and coders on GitHub can follow easily.
 
----
+---.
 
 ## ⚠️ Important notes before you start
 
