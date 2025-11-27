@@ -1,0 +1,45 @@
+📘 WORDPRESS FTP ERROR FIX (XAMPP LINUX)
+Site Folder: golden-buyz
+------------------------------------------------------------
+
+✅ STEP 1 — Set Correct Owner (XAMPP user = daemon)
+sudo chown -R daemon:daemon /opt/lampp/htdocs/golden-buyz
+
+------------------------------------------------------------
+
+✅ STEP 2 — Set Correct Permissions (Safe Mode)
+sudo chmod -R 775 /opt/lampp/htdocs/golden-buyz
+
+------------------------------------------------------------
+
+✅ STEP 3 — Force WordPress to use Direct File Access
+Edit wp-config.php:
+sudo nano /opt/lampp/htdocs/golden-buyz/wp-config.php
+
+Add this line:
+define('FS_METHOD', 'direct');
+
+Paste it above this line:
+/* That's all, stop editing! Happy publishing. */
+
+Save:
+CTRL + O → Enter
+CTRL + X
+
+------------------------------------------------------------
+
+✅ STEP 4 — Restart XAMPP
+sudo /opt/lampp/lampp restart
+
+------------------------------------------------------------
+
+🚀 Now try installing any plugin.
+✔ FTP popup will be gone.
+✔ Plugins/Themes install without FTP.
+
+------------------------------------------------------------
+
+⚠️ FINAL HARD FIX (ONLY if still not working)
+sudo chmod -R 777 /opt/lampp/htdocs/golden-buyz
+
+(Use only on localhost; never use 777 on live servers.)
